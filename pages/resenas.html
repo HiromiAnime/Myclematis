@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reseñas | Masterlist</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <div class="bg-orbit"></div>
+  <div class="bg-orbit bg-orbit-2"></div>
+
+  <header class="main-header">
+    <div class="nav">
+      <div class="brand">
+        <span class="brand-pill">My Clematis</span>
+        <span class="brand-sub">Lotes &amp; Pre-orders</span>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="terminos.html">Términos</a>
+        <a href="masterlist.html">Masterlist</a>
+        <a href="resenas.html">Reseñas</a>
+      </nav>
+      <button id="musicToggle" class="btn-ghost">♫ Música OFF</button>
+    </div>
+  </header>
+
+  <audio id="bgMusic" loop>
+    <source src="../musica/Taylor Swift - Father Figure (Lyric Video) (1).mp3" type="audio/mpeg" />
+  </audio>
+
+  <main class="container">
+    <section class="card reviews-section">
+      <div class="section-header">
+        <div>
+          <span class="section-label">Opiniones</span>
+          <h2>Comparte tu Experiencia</h2>
+        </div>
+        <p class="section-note">Tu reseña se enviará directamente al correo de la tienda.</p>
+      </div>
+
+      <!-- FORMULARIO REAL con envío a correo -->
+      <form class="review-form-external"
+            action="https://formsubmit.co/hiromi.anime.12@gmail.com"
+            method="POST"
+            enctype="multipart/form-data">
+
+        <!-- NOMBRE -->
+        <div class="form-row">
+          <label for="reviewName">Nombre / Apodo</label>
+          <input id="reviewName" type="text" name="Nombre" placeholder="Ej. Ana, Cherry..." required />
+        </div>
+
+        <!-- CALIFICACIÓN -->
+        <div class="form-row full-width">
+          <label>Calificación</label>
+          <div class="rating">
+            <input type="radio" id="star5" name="Estrellas" value="5" required><label for="star5">★</label>
+            <input type="radio" id="star4" name="Estrellas" value="4"><label for="star4">★</label>
+            <input type="radio" id="star3" name="Estrellas" value="3"><label for="star3">★</label>
+            <input type="radio" id="star2" name="Estrellas" value="2"><label for="star2">★</label>
+            <input type="radio" id="star1" name="Estrellas" value="1"><label for="star1">★</label>
+          </div>
+        </div>
+
+        <!-- MENSAJE -->
+        <div class="form-row full-width">
+          <label for="reviewText">Comentario</label>
+          <textarea id="reviewText" name="Mensaje" rows="3" placeholder="¿Cómo llegó tu producto? ¿Cómo fue la atención?" required></textarea>
+        </div>
+
+        <!-- SUBIR FOTOS -->
+        <div class="form-row full-width">
+          <label for="photos">Subir fotos</label>
+          <input type="file" id="photos" name="Fotos" accept="image/*" multiple>
+        </div>
+
+        <!-- CONFIGURACIÓN DE FORM SUBMIT -->
+        <input type="hidden" name="_next" value="https://hiromianime.github.io/Velvet-Temptation/">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- BOTÓN -->
+        <div class="form-row form-row-button">
+          <button type="submit" class="btn-primary">Enviar Reseña</button>
+        </div>
+      </form>
+
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
